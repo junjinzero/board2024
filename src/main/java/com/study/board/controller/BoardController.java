@@ -7,10 +7,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class BoardController {
 
-    @GetMapping("/")
-    @ResponseBody
-    public String main() {
-
-        return "집가고싶다";
+    @GetMapping("/board/write") //  웹 주소
+    public String boardWriteFrom(){
+        return "board_write";
     }
 }
