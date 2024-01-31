@@ -33,4 +33,12 @@ public class BoardController {
 
         return "board_list";
     }
+
+    @GetMapping("/board/view")  // localhost:8080/board/view?id=1
+    public String boardView(Model model, @RequestParam(value="board_id") Integer board_id) {
+
+        model.addAttribute("board", boardService.boardView(board_id));
+
+        return "board_view";
+    }
 }

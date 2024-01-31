@@ -24,7 +24,9 @@
             <tbody>
                 <tr th:each="board : ${list}">
                     <td th:text="${board.board_id}">1</td>
-                    <td th:text="${board.board_title}">글 제목</td>
+                    <td>
+                        <a th:text="${board.board_title} " th:href="@{/board/view(board_id=${board.board_id})}"></a>
+                    </td>
                 </tr>
             </tbody>
         </table>
