@@ -7,5 +7,6 @@
 <body>
     <h1 th:text="${board.board_title}">제목입니다.</h1>
     <p th:text="${board.board_cont}">내용이 들어갈 부분입니다. </p>
+    <a th:href="@{/board/delete(board_id=${board.board_id})}">삭제</a>
 </body>
 </html>

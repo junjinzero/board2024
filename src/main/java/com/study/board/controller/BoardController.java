@@ -41,4 +41,11 @@ public class BoardController {
 
         return "board_view";
     }
+
+    @GetMapping("/board/delete")
+    public String boardDelete( @RequestParam(value="board_id") Integer board_id) {
+
+        boardService.boardDelete(board_id);
+        return "redirect:/board/list";
+    }
 }

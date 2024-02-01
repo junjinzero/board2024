@@ -27,4 +27,8 @@ public class BoardService {
         return boardRepository.findById(board_id).get();
         // findById 으로 받아오면 optional 로 받기 때문에, .get() 을 넣어 Board 를 넘길 수 있게 한다.
     }
+
+    public void boardDelete(Integer board_id) {
+        boardRepository.deleteById(board_id);
+    }
 }
