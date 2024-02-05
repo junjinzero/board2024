@@ -43,9 +43,30 @@ public class BoardController {
     }
 
     @GetMapping("/board/delete")
-    public String boardDelete( @RequestParam(value="board_id") Integer board_id) {
+    public String boardDelete(@RequestParam(value="board_id") Integer board_id) {
 
         boardService.boardDelete(board_id);
         return "redirect:/board/list";
     }
+
+    @GetMapping("/board/modify/{board_id}")
+    public String boardModify(@PathVariable("board_id")  Integer board_id, Model model) {
+        model.addAttribute("board", boardService.boardView(board_id));
+        System.out.println("board_id = " + board_id);
+        return "board_modify";
+    }
+
+    @PostMapping("/board/update/{board_id}")
+    public String boardUpdate(@PathVariable("board_id") Integer board_id, Board board) {
+        System.out.println("board_id = " + board_id);
+        System.out.println(board.getBoard_title());
+        Board boardTemp = boardService.boardView(board_id);
+        boardTemp.setBoard_title(board.getBoard_title());
+        boardTemp.setBoard_cont(board.getBoard_cont());
+
+        boardService.write(boardTemp);
+
+        return "redirect:/board/list";
+    }
+
 }
