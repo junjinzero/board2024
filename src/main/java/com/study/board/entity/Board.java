@@ -14,4 +14,7 @@ public class Board {
     private Integer board_id;
     private String board_title;
     private String board_cont;
+    private String file_nm;
+    private String file_path;
+
 }
