@@ -41,7 +41,7 @@ public class BoardController {
                              , size = 10
                              //, sort = "board_id"  //  이게 있으면 에러남
                              , direction = Sort.Direction.DESC) Pageable pageable
-            , @RequestParam(value="searchKeyword") String searchKeyword) {
+            , @RequestParam(name = "searchKeyword", required = false) String searchKeyword) {
 
         Page<Board> list = null;
 
