@@ -1,9 +1,6 @@
 package com.study.board.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -12,7 +9,8 @@ public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer board_id;
-    private String board_title;
+    @Column(name = "boardTitle")
+    private String boardTitle;
     private String board_cont;
     private String file_nm;
     private String file_path;

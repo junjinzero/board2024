@@ -45,6 +45,11 @@ public class BoardService {
         return boardRepository.findAll(pageable);
     }
 
+    public Page<Board> boardSearchList(String searchKeyword, Pageable pageable) {
+
+        return boardRepository.findByBoardTitleContaining(searchKeyword, pageable);
+    }
+
     public Board boardView(Integer board_id) {
         return boardRepository.findById(board_id).get();
         // findById 으로 받아오면 optional 로 받기 때문에, .get() 을 넣어 Board 를 넘길 수 있게 한다.

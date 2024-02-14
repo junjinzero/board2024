@@ -40,9 +40,20 @@ public class BoardController {
             , @PageableDefault(page = 0
                              , size = 10
                              //, sort = "board_id"  //  이게 있으면 에러남
-                             , direction = Sort.Direction.DESC) Pageable pageable) {
+                             , direction = Sort.Direction.DESC) Pageable pageable
+            , @RequestParam(value="searchKeyword") String searchKeyword) {
 
-        Page<Board> list = boardService.boardList(pageable);
+        Page<Board> list = null;
+
+        // searchKeyword 가 들어왔을 때와 들어오지 않았을 때를 구분한다.
+        if (searchKeyword == null) {
+            list = boardService.boardList(pageable);
+        }
+        else {
+            list = boardService.boardSearchList(searchKeyword, pageable);
+        }
+
+        list = boardService.boardList(pageable);
 
         int nowPage   = list.getPageable().getPageNumber() + 1;
         int startPage = Math.max(nowPage - 4, 1);
@@ -82,7 +93,7 @@ public class BoardController {
     public String boardUpdate(@PathVariable("board_id") Integer board_id, Board board, Model model, MultipartFile file) throws Exception {
 
         Board boardTemp = boardService.boardView(board_id);
-        boardTemp.setBoard_title(board.getBoard_title());
+        boardTemp.setBoardTitle(board.getBoardTitle());
         boardTemp.setBoard_cont(board.getBoard_cont());
 
         boardService.write(boardTemp, file);
