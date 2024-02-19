@@ -53,8 +53,6 @@ public class BoardController {
             list = boardService.boardSearchList(searchKeyword, pageable);
         }
 
-        list = boardService.boardList(pageable);
-
         int nowPage   = list.getPageable().getPageNumber() + 1;
         int startPage = Math.max(nowPage - 4, 1);
         int endPage   = Math.min(nowPage + 5, list.getTotalPages());
