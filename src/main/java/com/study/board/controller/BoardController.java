@@ -18,6 +18,13 @@ public class BoardController {
     @Autowired
     private BoardService boardService;
 
+    @GetMapping //  index.html
+    public String index() {
+
+        return "index";
+
+    }
+
     @GetMapping("/board/write") //  웹 주소
     public String boardWriteFrom(){
         return "board_write";
