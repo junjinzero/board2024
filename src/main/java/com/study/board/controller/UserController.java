@@ -22,13 +22,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping //  index.html
-    public String index() {
-
-        return "index";
-
-    }
-
     @GetMapping("/user/write") //  웹 주소
     public String boardWriteFrom(){
         return "board_write";

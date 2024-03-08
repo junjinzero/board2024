@@ -1,4 +1,6 @@
-
 .my-button {
-    margin: 10px; /* 위 아래 왼쪽 오른쪽 모두에 대해 10px의 마진을 줍니다. */
-}
+     margin: 10px; /* 위 아래 왼쪽 오른쪽 모두에 대해 10px의 마진을 줍니다. */
+ }
+ .container {
+   max-width: 960px;
+ }
