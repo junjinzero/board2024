@@ -26,8 +26,8 @@ public class BoardController {
     }
 
     @GetMapping("/board/write") //  웹 주소
-    public String boardWriteFrom(){
-        return "board_write";
+    public String boardWriteForm(){
+        return "board/board_write";
     }
 
     @PostMapping("board/writepro")
@@ -39,7 +39,7 @@ public class BoardController {
         model.addAttribute("message", "글 작성이 완료되었습니다.");
         model.addAttribute("searchUrl", "/board/list");
 
-        return "message";
+        return "board/message";
     }
 
     @GetMapping("/board/list")
@@ -69,7 +69,7 @@ public class BoardController {
         model.addAttribute("startPage", startPage);
         model.addAttribute("endPage",   endPage);
 
-        return "board_list";
+        return "board/board_list";
     }
 
     @GetMapping("/board/view")  // localhost:8080/board/view?id=1
@@ -77,7 +77,7 @@ public class BoardController {
 
         model.addAttribute("board", boardService.boardView(board_id));
 
-        return "board_view";
+        return "board/board_view";
     }
 
     @GetMapping("/board/delete")
@@ -91,7 +91,7 @@ public class BoardController {
     public String boardModify(@PathVariable("board_id")  Integer board_id, Model model) {
         model.addAttribute("board", boardService.boardView(board_id));
         System.out.println("board_id = " + board_id);
-        return "board_modify";
+        return "board/board_modify";
     }
 
     @PostMapping("/board/update/{board_id}")
@@ -106,7 +106,7 @@ public class BoardController {
         model.addAttribute("message", "글 수정이 완료되었습니다.");
         model.addAttribute("searchUrl", "/board/list");
 
-        return "message";
+        return "board/message";
 
     }
 

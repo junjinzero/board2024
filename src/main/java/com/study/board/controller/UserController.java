@@ -23,8 +23,8 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/user/write") //  웹 주소
-    public String boardWriteFrom(){
-        return "board_write";
+    public String userWriteForm(){
+        return "user/user_write";
     }
 
 
