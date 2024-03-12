@@ -1,6 +1,7 @@
 package com.study.board.service;
 
 import com.study.board.entity.Board;
+import com.study.board.entity.User;
 import com.study.board.repository.BoardRepository;
 import com.study.board.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,4 +21,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    public void write(User user) throws IOException {
+        userRepository.save(user);
+    }
 }
