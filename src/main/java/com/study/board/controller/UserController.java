@@ -14,6 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Date;
+
 @Controller
 public class UserController {
 
@@ -30,6 +32,9 @@ public class UserController {
     @PostMapping("user/writepro")  // 회원가입
     public String userWritePro(User user) throws Exception {
         System.out.println("userWriteProd");
+
+        user.setUser_pw_chg_dttm(new Date());
+        user.setUse_yn("Y");
 
         userService.write(user);
 

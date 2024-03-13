@@ -51,32 +51,19 @@
                 <div class="row g-3">
                     <div class="col-sm-12">
                         <label for="user_nm" class="form-label">이름 </label>
-                        <input type="text" class="form-control" id="user_nm" placeholder="이름을 입력하세요.." value="" required="" name="user_nm">
+                        <input type="text" class="form-control" id="user_nm" placeholder="이름을 입력하세요." value="" required="" name="user_nm">
                         <div class="invalid-feedback">
                             Valid first name is required.
                         </div>
                     </div>
 
                     <div class="col-sm-12">
-                        <label for="user_id" class="form-label">id </label>
-                        <input type="text" class="form-control" id="user_id" placeholder="id를 입력하세요.." value="" required="" name="user_id">
+                        <label for="user_id" class="form-label">ID </label>
+                        <input type="text" class="form-control" id="user_id" placeholder="ID를 입력하세요." value="" required="" name="user_id">
                         <div class="invalid-feedback">
                             Valid first name is required.
                         </div>
                     </div>
-
-                    <div class="col-12">
-                        <label for="user_nicknm" class="form-label">닉네임</label>
-                        <div class="input-group has-validation">
-                            <span class="input-group-text">@</span>
-                            <input type="text" class="form-control" id="user_nicknm" placeholder="user nickname" required="" name="user_nicknm">
-                            <div class="invalid-feedback">
-                                Your user ID is required.
-                            </div>
-                        </div>
-                    </div>
-
-
 
                     <div class="col-sm-6">
                         <label for="pwd" class="form-label">비밀번호 </label>
@@ -94,11 +81,27 @@
                             Valid last name is required.
                         </div>
                     </div>
+
+                    <div class="col-sm-12">
+                        <label for="user_hpn" class="form-label">휴대폰  </label>
+                        <input type="number" class="form-control" id="user_hpn" placeholder="'-' 없이 숫자만 입력" value="" required="" name="user_hpn">
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="user_nicknm" class="form-label">닉네임</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text">@</span>
+                            <input type="text" class="form-control" id="user_nicknm" placeholder="user nickname" required="" name="user_nicknm">
+                            <div class="invalid-feedback">
+                                Your user ID is required.
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-
-
-
-
 
                 <hr class="my-4">
                 <h4 class="mb-3">선택입력사항</h4>
